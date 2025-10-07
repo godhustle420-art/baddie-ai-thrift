@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo to Profit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.10.0"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+    --pink-50: #fdf2f8;
+    --pink-100: #fce7f3;
+    --pink-200: #fbcfe8;
+    --pink-300: #f9a8d4;
+    --pink-400: #f472b6;
+    --pink-500: #ec4899;
+    --pink-600: #db2777;
+    --pink-700: #be185d;
+    --pink-800: #9d174d;
+    --pink-900: #831843;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--pink-50);
+    background: 
+      radial-gradient(circle at 10% 20%, rgb(252, 231, 243) 0%, rgba(252, 231, 243, 0) 25%),
+      radial-gradient(circle at 85% 70%, rgb(251, 207, 232) 0%, rgba(251, 207, 232, 0) 30%),
+      linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+    min-height: 100vh;
+}
+
+.font-display { 
+    font-family: 'Playfair Display', serif; 
+}
+
+h1, h3, .font-display {
+    font-family: 'Playfair Display', serif !important;
+    background: linear-gradient(135deg, var(--pink-500), var(--pink-700));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 1px 1px 3px rgba(131, 24, 67, 0.2);
+}
+
+
+/* --- Tailwind Color Overrides --- */
+
+/* Gradients & Shadows */
+.from-pink-600.to-rose-500 {
+    background-image: linear-gradient(to bottom right, var(--pink-600), var(--pink-500)) !important;
+}
+.hover\:from-pink-500:hover { --tw-gradient-from: var(--pink-500) !important; }
+.hover\:to-rose-400:hover { --tw-gradient-to: var(--pink-400) !important; }
+
+.shadow-pink-500\/20 { --tw-shadow-color: var(--pink-500) !important; --tw-shadow: var(--tw-shadow-colored); }
+.shadow-pink-500\/30 { --tw-shadow-color: var(--pink-500) !important; --tw-shadow: var(--tw-shadow-colored); }
+.shadow-pink-500\/40 { --tw-shadow-color: var(--pink-500) !important; --tw-shadow: var(--tw-shadow-colored); }
+.focus\:ring-pink-400:focus { --tw-ring-color: var(--pink-400) !important; }
+
+/* Text Colors */
+.text-pink-500 { color: var(--pink-500) !important; }
+.text-pink-600 { color: var(--pink-600) !important; }
+.text-pink-700 { color: var(--pink-700) !important; }
+.text-rose-500 { color: var(--pink-500) !important; }
+.text-rose-600, .text-rose-600\/80 { color: var(--pink-600) !important; }
+.text-rose-700, .text-rose-700\/80, .text-rose-700\/90 { color: var(--pink-700) !important; }
+.text-rose-800 { color: var(--pink-800) !important; }
+.text-rose-900 { color: var(--pink-900) !important; }
+.hover\:text-pink-600:hover { color: var(--pink-600) !important; }
+
+/* Background Colors */
+.bg-rose-50 { background-color: var(--pink-50) !important; }
+.bg-rose-100 { background-color: var(--pink-100) !important; }
+.bg-rose-50\/50 { background-color: rgba(253, 242, 248, 0.5) !important; }
+.hover\:bg-rose-50:hover { background-color: var(--pink-50) !important; }
+.hover\:bg-rose-100:hover { background-color: var(--pink-100) !important; }
+.bg-rose-100\/80 { background-color: rgba(252, 231, 243, 0.8) !important; }
+.bg-pink-500\/10 { background-color: rgba(236, 72, 153, 0.1) !important; }
+.bg-rose-200\/50 { background-color: rgba(251, 207, 232, 0.5) !important; }
+.hover\:bg-rose-200\/80:hover { background-color: rgba(251, 207, 232, 0.8) !important; }
+
+
+/* Border Colors */
+.border-rose-200 { border-color: var(--pink-200) !important; }
+.border-rose-200\/50 { border-color: rgba(251, 207, 232, 0.5) !important; }
+.border-rose-200\/80 { border-color: rgba(251, 207, 232, 0.8) !important; }
+.hover\:border-rose-300:hover { border-color: var(--pink-300) !important; }
+.border-rose-300\/80 { border-color: rgba(249, 168, 212, 0.8) !important; }
+.border-pink-400 { border-color: var(--pink-400) !important; }
+
+/* Placeholder Colors */
+.placeholder\:text-rose-400::placeholder { color: var(--pink-400) !important; opacity: 0.6; }
+
+</style>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
